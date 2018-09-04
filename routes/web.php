@@ -17,4 +17,8 @@ Route::get('/', function () {
 
 Route::get('/new', 'PagesController@new');
 
-Route::get('/todo', 'TodosController@index');
+Route::get('/todos', 'TodosController@index');
+
+Route::post('/todo/create', 'TodosController@store');
+
+Route::put('/todo/update', 'TodosController@update');
