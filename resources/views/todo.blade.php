@@ -2,6 +2,7 @@
 @section('content')
     TODO        
     <form action="/todo/create" method="post">
+        @csrf
         <div class="form-group row">
             <div class="col-lg-6 offset-lg-3">
                 <input type="text" name="todo" id="todo" class="form-control input-lg" placeholder="Create TODO">

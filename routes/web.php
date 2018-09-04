@@ -21,4 +21,3 @@ Route::get('/todos', 'TodosController@index');
 
 Route::post('/todo/create', 'TodosController@store');
 
-Route::put('/todo/update', 'TodosController@update');
