@@ -21,3 +21,5 @@ Route::get('/todos', 'TodosController@index');
 
 Route::post('/todo/create', 'TodosController@store');
 
+Route::delete('/todo/delete', 'TodosController@destroy')->name('todo.delete');
+
