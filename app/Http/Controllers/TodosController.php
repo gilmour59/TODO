@@ -8,7 +8,8 @@ use App\Todo;
 class TodosController extends Controller
 {
     public function index(){
-        $todos = Todo::all();
+        //$todos = Todo::all();
+        $todos = Todo::orderBy('created_at', 'desc')->get();
 
         /*
         $data = array(
@@ -41,6 +42,51 @@ class TodosController extends Controller
         $todo->todo = $request->input('todo');
         $todo->save();
 
-        return redirect('/todos')->with('sucess', 'TODO Added!');
+        return redirect()->route('todos')->with('success', 'TODO Added!');
+    }
+
+    public function destroy($id){
+        
+        $todo = Todo::find($id);
+
+        $todo->delete();
+        return redirect()->route('todos')->with('success', 'Deleted');
+    }
+
+    public function edit($id){
+
+        $todo = Todo::find($id);
+
+        return view('edit')->with('todos', $todo);
+
+    }
+
+    public function update(Request $request, $id){
+        
+        $this->validate($request, [
+            'todo' => 'required'
+        ]);
+
+        $todo = Todo::find($id);
+
+        $todo->todo = $request->input('todo');
+        $todo->save();
+        
+        return redirect()->route('todos')->with('sucess', 'TODO Updated!');
+    }
+
+    public function completed($id){
+        
+        $todo = Todo::find($id);
+
+        if(!$todo->completed){
+            $todo->completed = 1;
+        }else{
+            $todo->completed = 0;
+        }
+
+        $todo->save();
+
+        return redirect()->route('todos')->with('sucess', 'Marked!');   
     }
 }

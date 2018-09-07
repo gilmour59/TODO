@@ -21,16 +21,6 @@
                 font-weight: 100;
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
             .top-right {
                 position: absolute;
                 right: 10px;
@@ -61,7 +51,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref">
+        <div class="container">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
