@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+        
+        <script src="{{ asset('js/app.js') }}" ></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         
         <!-- Fonts -->
@@ -63,6 +64,7 @@
                 </div>
             @endif
 
+            @include('include.messages')
             <div class="content">
                 <div class="title m-b-md">
                     @yield('content')

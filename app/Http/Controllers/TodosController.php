@@ -72,7 +72,7 @@ class TodosController extends Controller
         $todo->todo = $request->input('todo');
         $todo->save();
         
-        return redirect()->route('todos')->with('sucess', 'TODO Updated!');
+        return redirect()->route('todos')->with('success', 'TODO Updated!');
     }
 
     public function completed($id){
@@ -87,6 +87,6 @@ class TodosController extends Controller
 
         $todo->save();
 
-        return redirect()->route('todos')->with('sucess', 'Marked!');   
+        return redirect()->route('todos')->with('success', 'Marked!');   
     }
 }

@@ -1,14 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-@if (count($errors) > 0)
-    @foreach ($errors->all() as $error) <!--all() because the object has arrays as values-->
-        <div class="alert alert-danger">
-            {{$error}} <!-- Errors from validations (not sessions) -->
-        </div>
-    @endforeach
-@endif
-
     TODO        
     <form action="/todo/create" method="post">
         @csrf

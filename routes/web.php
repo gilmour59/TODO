@@ -29,3 +29,6 @@ Route::put('/todo/update/{id}', 'TodosController@update')->name('todo.update');
 
 Route::get('/todo/completed/{id}', 'TodosController@completed')->name('todo.completed');
 
+Route::get('/pdf', function () {
+    return response()->file('C:\Users\Gil\Downloads\dev-env.mp4');
+});
