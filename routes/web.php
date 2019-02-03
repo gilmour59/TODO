@@ -18,7 +18,7 @@ Route::get('/', function () {
 //Remember that if you don't use pretty URLs; The URL is case sentitive. TODO is uppercase e.g. localhost/TODO/public/{{route}}
 Route::get('/new', 'PagesController@new');
 
-Route::get('/todos', 'TodosController@index')->name('todos');
+Route::get('/todo', 'TodosController@index')->name('todos');
 
 Route::post('/todo/create', 'TodosController@store')->name('todo.create');
 
