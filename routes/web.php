@@ -33,3 +33,7 @@ Route::get('/todo/completed/{id}', 'TodosController@completed')->name('todo.comp
 Route::get('/pdf', function () {
     return response()->file('C:\Users\Gil\Downloads\dev-env.mp4');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
