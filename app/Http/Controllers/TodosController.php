@@ -50,7 +50,8 @@ class TodosController extends Controller
         $todo = Todo::find($id);
 
         $todo->delete();
-        return redirect()->route('todos')->with('success', 'Deleted');
+        //return redirect()->route('todos')->with('success', 'Deleted');
+        return redirect(url()->previous() . '#test')->with('success', 'Deleted');
     }
 
     public function edit($id){
